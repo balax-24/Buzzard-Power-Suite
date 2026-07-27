@@ -141,18 +141,6 @@ Generated packages will be stored in `build/dist_packages/`.
 
 ---
 
-## 🧪 Testing & Verification
-
-Run the comprehensive unit & integration test suite:
-
-```bash
-pytest -v
-```
-
-All 53 unit and integration test cases verify profile state transitions, hardware sysfs access, vendor plugins, packaging generators, and adaptive introspection.
-
----
-
 ## 📄 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
