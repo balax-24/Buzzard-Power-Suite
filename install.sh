@@ -58,6 +58,24 @@ fi
 echo -e "\n${BLUE}▶ Installing Buzzard Power Suite Python Package...${RESET}"
 python3 -m pip install --break-system-packages -e . 2>/dev/null || python3 -m pip install -e .
 
+# Ensure $HOME/.local/bin binaries are symlinked to /usr/local/bin so Zsh/Bash/Arch find them instantly
+USER_BIN_DIR="$HOME/.local/bin"
+if [ -d "$USER_BIN_DIR" ]; then
+    if [ -f "$USER_BIN_DIR/buzzard" ]; then
+        sudo ln -sf "$USER_BIN_DIR/buzzard" /usr/local/bin/buzzard 2>/dev/null || true
+    fi
+    if [ -f "$USER_BIN_DIR/buzzard-gui" ]; then
+        sudo ln -sf "$USER_BIN_DIR/buzzard-gui" /usr/local/bin/buzzard-gui 2>/dev/null || true
+    fi
+fi
+
+# Also add ~/.local/bin to shell configuration files if missing
+for RC_FILE in "$HOME/.zshrc" "$HOME/.bashrc"; do
+    if [ -f "$RC_FILE" ] && ! grep -q '\.local/bin' "$RC_FILE"; then
+        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$RC_FILE"
+    fi
+done
+
 # 4. Configure Passwordless Power Sysfs Privileges
 echo -e "\n${BLUE}▶ Setting up Passwordless Sudoers Power Privileges...${RESET}"
 SUDOERS_FILE="/etc/sudoers.d/buzzard"
@@ -68,7 +86,7 @@ sudo chmod 0440 $SUDOERS_FILE
 
 # 5. Enable Systemd Background User Service
 echo -e "\n${BLUE}▶ Enabling Systemd User Daemon Service...${RESET}"
-buzzard setup || true
+"$USER_BIN_DIR/buzzard" setup 2>/dev/null || buzzard setup || true
 
 # 6. Install Desktop Entry for GUI Launcher
 DESKTOP_DIR="$HOME/.local/share/applications"
