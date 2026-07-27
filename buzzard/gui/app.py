@@ -62,12 +62,13 @@ class BuzzardTrayApp:
         status = StatusService.get_status()
         est = PowerEstimator.estimate()
         wattage_str = f"{est['power_draw_w']:.2f} W" if est['power_draw_w'] > 0 else "AC Connected"
-        
+        runtime_str = est.get("estimated_runtime", f"{est.get('hours_remaining', 0)}h")
+
         self.header_item = Gtk.MenuItem(label=f"🦅 Buzzard: {status['profile'].upper()} ({status['battery_percent']}%)")
         self.header_item.set_sensitive(False)
         menu.append(self.header_item)
 
-        self.telemetry_item = Gtk.MenuItem(label=f"⚡ Draw: {wattage_str} | Runtime: {est['time_remaining_hours']}h")
+        self.telemetry_item = Gtk.MenuItem(label=f"⚡ Draw: {wattage_str} | Runtime: {runtime_str}")
         self.telemetry_item.set_sensitive(False)
         menu.append(self.telemetry_item)
 
@@ -149,9 +150,10 @@ class BuzzardTrayApp:
             status = StatusService.get_status()
             est = PowerEstimator.estimate()
             wattage_str = f"{est['power_draw_w']:.2f} W" if est['power_draw_w'] > 0 else "AC Connected"
+            runtime_str = est.get("estimated_runtime", f"{est.get('hours_remaining', 0)}h")
 
             self.header_item.set_label(f"🦅 Buzzard: {status['profile'].upper()} ({status['battery_percent']}%)")
-            self.telemetry_item.set_label(f"⚡ Draw: {wattage_str} | Runtime: {est['time_remaining_hours']}h")
+            self.telemetry_item.set_label(f"⚡ Draw: {wattage_str} | Runtime: {runtime_str}")
 
             if self.indicator:
                 self.indicator.set_label(f"{status['battery_percent']}% | {wattage_str}", "buzzard")

@@ -29,12 +29,13 @@ class PowerEstimator:
         total_wh = 50.0
         remaining_wh = (pct / 100.0) * total_wh
 
-        if ac_connected or status == "Charging":
+        if ac_connected and status != "Discharging":
             return {
                 "power_draw_w": power_w,
                 "status": "Charging",
                 "estimated_runtime": "Plugged In (AC)",
                 "hours_remaining": 0.0,
+                "time_remaining_hours": 0.0,
             }
 
         if power_w <= 0.5:
@@ -51,4 +52,5 @@ class PowerEstimator:
             "status": "Discharging",
             "estimated_runtime": time_str,
             "hours_remaining": hours_remaining,
+            "time_remaining_hours": hours_remaining,
         }
