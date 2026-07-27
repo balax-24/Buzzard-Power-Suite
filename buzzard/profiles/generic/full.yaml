@@ -1,0 +1,12 @@
+name: Full Power
+description: High performance profile for intensive development work
+gpu: nvidia
+cpu: performance
+brightness: 80
+bluetooth: true
+tlp: false
+powertop: false
+refresh_rate: 120
+vendor_options:
+  battery_charge_limit: 100
+  fan_profile: performance

@@ -1,0 +1,17 @@
+name: MacMode Ultra Power Saver
+description: Apple Silicon MacBook equivalent battery tuning targeting ~3.5W - 5.0W discharge rates
+gpu: intel
+cpu: powersave
+epp: power
+turbo_boost: false
+brightness: 25
+bluetooth: false
+tlp: true
+powertop: true
+refresh_rate: 60
+audio_powersave: true
+nmi_watchdog: false
+aspm: powersave
+vendor_options:
+  battery_charge_limit: 80
+  fan_profile: quiet

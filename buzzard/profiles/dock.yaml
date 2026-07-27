@@ -1,0 +1,9 @@
+# Buzzard Docked Station Profile
+gpu: nvidia
+cpu: performance
+brightness: 100
+bluetooth: true
+tlp: true
+powertop: false
+vendor_options:
+  charge_limit: 100

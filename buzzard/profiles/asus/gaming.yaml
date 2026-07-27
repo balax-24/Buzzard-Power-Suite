@@ -1,0 +1,4 @@
+vendor_options:
+  battery_charge_limit: 100
+  fan_profile: turbo
+  wmi_panel_od: true

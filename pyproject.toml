@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "buzzard-power-suite"
+version = "1.0.0"
+description = "Universal Linux Power Management & AI Adaptive Workload Suite"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+authors = [
+    {name = "Buzzard Power Suite Developers"}
+]
+
+license = {text = "MIT"}
+
+keywords = [
+    "linux",
+    "macmode",
+    "power",
+    "battery",
+    "asus",
+    "lenovo",
+    "dell",
+    "hp",
+    "framework",
+    "gui",
+    "ai",
+    "packaging"
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Environment :: X11 Applications :: GTK",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Hardware",
+    "Topic :: System :: Power (Energy) Monitoring"
+]
+
+[project.scripts]
+buzzard = "buzzard.cli:main"
+buzzard-gui = "buzzard.gui.app:main"
+
+[tool.setuptools]
+include-package-data = true

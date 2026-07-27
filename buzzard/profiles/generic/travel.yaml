@@ -1,0 +1,12 @@
+name: Travel Saver
+description: Extreme power savings for flights and remote work without AC power
+gpu: intel
+cpu: powersave
+brightness: 25
+bluetooth: false
+tlp: true
+powertop: true
+refresh_rate: 60
+vendor_options:
+  battery_charge_limit: 80
+  fan_profile: quiet

@@ -1,0 +1,12 @@
+name: Gaming Mode
+description: Maximum GPU and CPU performance for high FPS gaming
+gpu: nvidia
+cpu: performance
+brightness: 100
+bluetooth: true
+tlp: false
+powertop: false
+refresh_rate: 144
+vendor_options:
+  battery_charge_limit: 100
+  fan_profile: turbo

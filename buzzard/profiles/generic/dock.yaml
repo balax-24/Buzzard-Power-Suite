@@ -1,0 +1,12 @@
+name: Docked Station
+description: High performance desktop workstation mode when connected to external display dock
+gpu: nvidia
+cpu: performance
+brightness: 100
+bluetooth: true
+tlp: false
+powertop: false
+refresh_rate: 144
+vendor_options:
+  battery_charge_limit: 80
+  fan_profile: performance

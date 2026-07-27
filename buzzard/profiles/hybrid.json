@@ -1,0 +1,8 @@
+{
+    "gpu":"intel",
+    "cpu":"powersave",
+    "brightness":20,
+    "bluetooth":true,
+    "tlp":true,
+    "powertop":true
+}

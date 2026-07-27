@@ -1,0 +1,12 @@
+name: Creator Mode
+description: High GPU rendering performance with high display brightness and color accuracy
+gpu: nvidia
+cpu: performance
+brightness: 90
+bluetooth: true
+tlp: false
+powertop: false
+refresh_rate: 120
+vendor_options:
+  battery_charge_limit: 100
+  fan_profile: performance

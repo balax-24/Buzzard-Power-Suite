@@ -1,0 +1,9 @@
+# Buzzard Hybrid Profile
+gpu: hybrid
+cpu: powersave
+brightness: 50
+bluetooth: true
+tlp: true
+powertop: false
+vendor_options:
+  charge_limit: 80

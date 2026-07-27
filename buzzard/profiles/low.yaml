@@ -1,0 +1,9 @@
+# Buzzard Low Power Profile
+gpu: intel
+cpu: powersave
+brightness: 30
+bluetooth: false
+tlp: true
+powertop: false
+vendor_options:
+  charge_limit: 80

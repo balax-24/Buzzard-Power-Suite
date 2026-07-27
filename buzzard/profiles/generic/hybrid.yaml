@@ -1,0 +1,12 @@
+name: Hybrid Power
+description: Balanced power profile for general daily tasks
+gpu: hybrid
+cpu: powersave
+brightness: 50
+bluetooth: true
+tlp: true
+powertop: false
+refresh_rate: 60
+vendor_options:
+  battery_charge_limit: 80
+  fan_profile: balanced

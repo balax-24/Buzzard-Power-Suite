@@ -1,0 +1,12 @@
+name: LLM Workload
+description: Optimized VRAM and multi-thread CPU performance for local AI inference
+gpu: nvidia
+cpu: performance
+brightness: 60
+bluetooth: false
+tlp: false
+powertop: false
+refresh_rate: 60
+vendor_options:
+  battery_charge_limit: 100
+  fan_profile: performance

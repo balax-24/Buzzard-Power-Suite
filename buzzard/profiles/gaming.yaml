@@ -1,0 +1,9 @@
+# Buzzard Gaming Profile
+gpu: nvidia
+cpu: performance
+brightness: 100
+bluetooth: true
+tlp: false
+powertop: false
+vendor_options:
+  charge_limit: 100

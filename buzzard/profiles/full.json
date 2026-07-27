@@ -1,0 +1,8 @@
+{
+    "gpu":"nvidia",
+    "cpu":"performance",
+    "brightness":20,
+    "bluetooth":true,
+    "tlp":false,
+    "powertop":false
+}

@@ -1,0 +1,12 @@
+name: Meeting Mode
+description: Quiet fan profile with Bluetooth enabled for wireless headset during calls
+gpu: hybrid
+cpu: powersave
+brightness: 45
+bluetooth: true
+tlp: true
+powertop: false
+refresh_rate: 60
+vendor_options:
+  battery_charge_limit: 80
+  fan_profile: quiet

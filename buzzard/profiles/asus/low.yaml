@@ -1,0 +1,4 @@
+vendor_options:
+  battery_charge_limit: 80
+  fan_profile: quiet
+  wmi_panel_od: false
