@@ -63,13 +63,12 @@ class DistroDetector:
     def get_dependency_packages(cls) -> List[str]:
         """Returns distro-specific package names for required power suite tools & modules.
 
-        (TLP, PowerTOP, power-profiles-daemon/powerctl, xrandr, libnotify, gobject, cpupower).
+        (TLP, PowerTOP, xrandr, libnotify, gobject, cpupower).
 
         Returns:
             List of package names for the active package manager.
         """
         pm = cls.get_package_manager()
-        distro_id = cls.get_info()["id"]
 
         if pm == "apt":
             pkgs = [
@@ -79,7 +78,6 @@ class DistroDetector:
                 "libnotify-bin",
                 "python3-gi",
                 "gir1.2-appindicator3-0.1",
-                "power-profiles-daemon",
                 "linux-tools-common",
                 "acpi",
             ]
@@ -93,7 +91,6 @@ class DistroDetector:
                 "libnotify",
                 "python-gobject",
                 "libappindicator-gtk3",
-                "power-profiles-daemon",
                 "acpi",
             ]
             return pkgs
@@ -106,7 +103,6 @@ class DistroDetector:
                 "libnotify",
                 "python3-gobject",
                 "libappindicator-gtk3",
-                "power-profiles-daemon",
                 "kernel-tools",
                 "acpi",
             ]
@@ -119,12 +115,11 @@ class DistroDetector:
                 "xrandr",
                 "libnotify-tools",
                 "python3-gobject",
-                "power-profiles-daemon",
                 "acpi",
             ]
             return pkgs
 
-        return ["tlp", "powertop", "xrandr", "power-profiles-daemon"]
+        return ["tlp", "powertop", "xrandr"]
 
     @classmethod
     def get_install_command(cls) -> str:

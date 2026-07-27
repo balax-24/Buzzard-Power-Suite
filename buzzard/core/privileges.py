@@ -33,10 +33,7 @@ class PrivilegeManager:
         """
         try:
             content = """# Buzzard Power Suite Sudoers Rules
-ALL ALL=(ALL) NOPASSWD: /usr/bin/tee /sys/*
-ALL ALL=(ALL) NOPASSWD: /usr/bin/tlp *
-ALL ALL=(ALL) NOPASSWD: /usr/bin/powertop *
-ALL ALL=(ALL) NOPASSWD: /usr/bin/powerprofilesctl *
+ALL ALL=(ALL) NOPASSWD: /usr/bin/tee, /usr/bin/tlp, /usr/bin/powertop, /usr/bin/powerprofilesctl
 """
             # Write via sudo tee to /etc/sudoers.d/buzzard
             cmd = f"echo '{content}' | sudo tee {cls.SUDOERS_FILE}"

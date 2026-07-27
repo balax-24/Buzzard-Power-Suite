@@ -121,12 +121,12 @@ class BatteryManager:
             Float power draw in Watts.
         """
         p_now = cls._read_node("power_now", default="0")
-        if p_now.isdigit():
+        if p_now.isdigit() and int(p_now) > 0:
             return round(int(p_now) / 1_000_000, 2)
 
         c_now = cls._read_node("current_now", default="0")
         v_now = cls._read_node("voltage_now", default="0")
-        if c_now.isdigit() and v_now.isdigit():
+        if c_now.isdigit() and v_now.isdigit() and int(c_now) > 0 and int(v_now) > 0:
             return round((int(c_now) / 1_000_000) * (int(v_now) / 1_000_000), 2)
 
         return 0.0
